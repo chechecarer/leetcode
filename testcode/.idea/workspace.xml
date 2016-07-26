@@ -24,8 +24,8 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71822035">
-              <caret line="42" column="26" selection-start-line="9" selection-start-column="12" selection-end-line="42" selection-end-column="26" />
+            <state vertical-scroll-proportion="1.2415254">
+              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -168,7 +168,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="99" y="110" width="1190" height="660" extended-state="0" />
+    <frame x="99" y="110" width="1190" height="660" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24913195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -208,8 +208,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71822035">
-          <caret line="42" column="26" selection-start-line="9" selection-start-column="12" selection-end-line="42" selection-end-column="26" />
+        <state vertical-scroll-proportion="1.2415254">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding />
         </state>
       </provider>
