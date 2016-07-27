@@ -7,47 +7,28 @@
 <body>
     <script>
 
-        var robber = function(nums, start, record){
-            var result ;
-            if(nums.length == 0){
-                result =  0;
-            }else if(nums.length == 1){
-                return nums[0];
-            }else{
-                var sub1 = nums.slice(2);
-                var sub2 = nums.slice(3);
-                var n0;
-                var n1;
-                if(record[start+2]+'' !== 'undefined'){
-                    n0 = record[start+2];
-                }else{
-                    n0 = robber(sub1, start+2 ,record);
-                }
-                if(record[start+3]+'' !== 'undefined'){
-                    n1 = record[start+3];
-                }else{
-                    n1 = robber(sub2, start+3, record);
-                }
-                result =  (n0+nums[0])>(n1+nums[1])?(n0+nums[0]):(n1+nums[1]);
+        var getRow = function (rowIndex) {
+            var result = [];
+            result.push(1);
+            if(rowIndex === 0){
+                return result;
             }
-            record[start] = result;
+            result.push(1);
+            if(rowIndex == 1){
+                return result;
+            }
+
+            var i, j;
+            for(i=2; i<= rowIndex ; i++){
+                result.push(1);
+                for(j=i-1; j>0; j--){
+                    result[j] = result[j-1]+result[j];
+                }
+            }
             return result;
         }
-        var rob = function(nums){
-            var record = {};
-            var start = 0;
-            var result = robber(nums, start, record);
-            return result
-        }
-//        var numss = [155,44,52,58,250,225,109,118,211,73,137,96,137,89,174,66,134,26,25,205,239,85,146,73,55,6,122,196,128,50,61,230,94,208,46,243,105,81,157,89,205,78,249,203,238,239,217,212,241,242,157,79,133,66,36,165];
-//        numss.shift();
-//        console.log(numss);
-        var numss =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-//        var numss = [0,0,0,0,0,0,0,0,0,0,0,0,0];
-        console.log(rob(numss));
-        console.log('count ='+count);
-//        var obj = {};
-//        console.log('obj[0]='+obj[0]+':'+(obj[0]+'' == 'undefined'));
+        var rowIndex = 3;
+       console.log(getRow(rowIndex));
     </script>
 </body>
 </html>
