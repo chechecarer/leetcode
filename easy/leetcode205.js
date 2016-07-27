@@ -4,8 +4,8 @@
  * @return {boolean}
  */
 var isIsomorphic = function(s, t) {
-    var arrS = [];
-	var arrT = [];
+    var arrS = {};
+	var arrT = {};
 	if(s.length !== t.length){
 		return false;
 	}
@@ -13,38 +13,43 @@ var isIsomorphic = function(s, t) {
 	    return true;
 	}
 	var i;
-	var sl,tl;
-	sl = tl = 0;
-	var ss, ts;
-	ss = ts = 0;
-	arrS[ss] = 1;
-	arrT[ts] = 1;
-	for(i=1; i<s.length; i++){
-		if(s[i] == s[i-1]){
-			arrS[ss] ++;
+	
+	for(i=0; i<s.length; i++){
+		if(arrS[s[i]+'_']){
+			arrS[s[i]+'_'].push(i);
 		}else{
-			ss ++;
-			arrS[ss] = 1;
+		    console.log(arrS);
+			arrS[s[i]+'_'] = [];
+			arrS[s[i]+'_'].push(i);
+			
 		}
-		if(t[i] == t[i-1]){
-			arrT[ts] ++;
+		if(arrT[t[i]+'_']){
+			arrT[t[i]+'_'].push(i);
 		}else{
-			ts ++;
-			arrT[ts] = 1;
+		    console.log(arrT);
+			arrT[t[i]+'_'] = [];
+			arrT[t[i]+'_'].push(i);
+			
 		}
 	}
 	console.log(arrS);
 	console.log(arrT);
-	if(arrT.length !== arrS.length){
+	var sKeys = Object.keys(arrS);
+	var tKeys = Object.keys(arrT);
+	if(sKeys.length != tKeys.length){
 		return false;
 	}
-	for(i=0; i<arrS.length; i++){
-		if(arrS[i] !== arrT[i]){
-			break;
+	var j;
+	for(i=0; i<sKeys.length; i++){
+		if(arrS[sKeys[i]].length !== arrT[tKeys[i]].length){
+			return false;
+		}else{
+			for(j=0; j<arrS[sKeys[i]].length; j++){
+				if(arrS[sKeys[i]][j] !== arrT[tKeys[i]][j]){
+					return false;
+				}
+			}
 		}
-	}
-	if(i<arrS.length){
-		return false;
 	}
 	return true;
 };
