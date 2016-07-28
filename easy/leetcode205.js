@@ -15,25 +15,25 @@ var isIsomorphic = function(s, t) {
 	var i;
 	
 	for(i=0; i<s.length; i++){
-		if(arrS[s[i]+'_']){
-			arrS[s[i]+'_'].push(i);
+		if(arrS['"'+s[i]+'"']){
+			arrS['"'+s[i]+'"'].push(i);
 		}else{
-		    console.log(arrS);
-			arrS[s[i]+'_'] = [];
-			arrS[s[i]+'_'].push(i);
-			
+
+			arrS['"'+s[i]+'"'] = [];
+			arrS['"'+s[i]+'"'].push(i);
 		}
-		if(arrT[t[i]+'_']){
-			arrT[t[i]+'_'].push(i);
+		if(arrT['"'+t[i]+'"']){
+			arrT['"'+t[i]+'"'].push(i);
 		}else{
-		    console.log(arrT);
-			arrT[t[i]+'_'] = [];
-			arrT[t[i]+'_'].push(i);
-			
+
+			arrT['"'+t[i]+'"'] = [];
+			arrT['"'+t[i]+'"'].push(i);
+		}
+		if(arrT['"'+t[i]+'"'].length != arrS['"'+s[i]+'"'].length){
+		    return false;
 		}
 	}
-	console.log(arrS);
-	console.log(arrT);
+	
 	var sKeys = Object.keys(arrS);
 	var tKeys = Object.keys(arrT);
 	if(sKeys.length != tKeys.length){
