@@ -7,32 +7,11 @@
 <body>
     <script>
 
-        var reverseBits = function(n) {
-            var nStr = n.toString(2);
-//            console.log(nStr.length);
-            if(nStr.length < 32){
-                var d = 32 - nStr.length;
-                while(d){
-                    nStr = '0'+nStr;
-                    d --;
-                }
-            }
-//            console.log(nStr);
-//            console.log(typeof nStr);
-            var rnStr ='';
-            var i = nStr.length-1;
-            var j = 0;
-            while(i>=0){
-                rnStr += nStr[i];
-                i --;
-                j ++;
-            }
-//            console.log(rnStr);
-            var result = parseInt(rnStr,2);
-            return result;
-        };
-        var rowIndex = 123;
-       console.log(reverseBits(rowIndex));
+
+        var rowIndex = '123';
+        rowIndex[0] = '0';
+       console.log(rowIndex);
+        console.log(rowIndex[0]+','+rowIndex[1]);
     </script>
 </body>
 </html>
