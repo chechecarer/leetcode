@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-    <script>
 var countBits = function(num){
     var data;
     var result = [];
@@ -23,10 +15,3 @@ var countBits = function(num){
     }
     return result;
 }
-
-var input = 5;
-console.log(countBits(input));
-
-    </script>
-</body>
-</html>
